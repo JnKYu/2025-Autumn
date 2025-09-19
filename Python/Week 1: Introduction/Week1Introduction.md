@@ -1,6 +1,4 @@
-我帮你把这份 **CS112 Week 1: Introduction to Python Programming** 的 PPT 内容整理成一个结构化的大纲，方便你快速浏览和学习。以下是 Markdown 格式，可以直接复制到 GitHub 仓库里查看。
 
----
 
 # CS112: Introduction to Python Programming
 
