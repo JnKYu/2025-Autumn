@@ -46,6 +46,35 @@ popped = nums.pop()          # 默认删末尾并返回
 del nums[0]                  # 按索引删
 print(nums, popped)          # [15, 30] 40
 ```
+append和extend的区别：
+  - 直观实例：
+    ```python
+    a = [1, 2, 3]
+
+    a.append([4, 5])
+    print(a)          # [1, 2, 3, [4, 5]]     ← 整个列表作为一个元素进来
+
+    a = [1, 2, 3]
+    a.extend([4, 5])
+    print(a)          # [1, 2, 3, 4, 5]       ← 展开后逐个加入
+    ```
+  - 对字符串的差异：
+    ```python
+    a = [1, 2, 3]
+    a.append("ab")
+    print(a)          # [1, 2, 3, 'ab']       ← 字符串整体作为一个元素
+    
+    a = [1, 2, 3]
+    a.extend("ab")
+    print(a)          # [1, 2, 3, 'a', 'b']   ← 字符串被当作可迭代，逐字符展开
+    
+    ```
+  - 任意对象vs需可迭代：
+    ```python
+    a = [1]
+    a.append(100)     # ✅ 任意对象都能 append
+    a.extend(100)     # ❌ TypeError: int 不是可迭代对象
+    ```
 
 ### 6) 赋值是“引用”不是拷贝（别名问题）
 
@@ -84,7 +113,7 @@ print(len(vals), sum(vals), max(vals), min(vals))  # 5 14 5 1
 s = [3, 1, 4, 1, 5]
 print(sorted(s))   # 返回新列表 [1, 1, 3, 4, 5]
 print(s)           # 原列表不变 [3, 1, 4, 1, 5]
-s.sort(reverse=True)
+s.sort(reverse=True) 
 print(s)           # 就地排序 [5, 4, 3, 1, 1]
 ```
 
