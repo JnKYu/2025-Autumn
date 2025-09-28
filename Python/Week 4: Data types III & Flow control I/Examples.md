@@ -43,12 +43,15 @@ print(student["name"])        # 通过键访问 -> 'Alice'
 print(student.get("age", 18)) # get 提供默认值 -> 18
 student["age"] = 20           # 新增或更新
 student.update({"major": "CS", "id": 1002})  # 批量更新（id 会被覆盖）
-print(list(student.keys()))   # keys 列表
-print(list(student.values())) # values 列表
-print(list(student.items()))  # items 列表 (键值对元组)
+print(list(student.keys()))   # keys 列表 ['name', 'id', 'age']
+print(list(student.values())) # values 列表 ['Alice', 1001, 18]
+print(list(student.items()))  # items 列表 (键值对元组) [('name', 'Alice'), ('id', 1001), ('age', 18)]
 del student["major"]          # 删除键
 print("id" in student)        # 键存在检查
 ```
+- get()和[]的区别：
+  - get() 方法的作用是：根据给定的键返回对应的值，如果键不存在，则返回一个指定的默认值（如果没有指定默认值，默认返回 None）。
+  - get() 方法比直接用 [] 访问更安全，因为如果访问的键不存在，直接用 [] 会抛出 KeyError 错误；而 get() 方法则可以避免这种错误。
 
 # 二、各数据类型及常用操作（int, float, bool, str）
 
