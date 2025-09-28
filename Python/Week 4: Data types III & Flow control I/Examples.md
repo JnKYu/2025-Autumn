@@ -205,12 +205,12 @@ pairs = [("a", 1), ("b", 2)]
 d = dict(pairs)
 print(d)
 
-# 可哈希键：只有不可变对象可作键
-good_key = (1,2)
+# 可哈希键：只有不可变对象可作键 d = {}
+good_key = (1,2)   # d[good_key] = 10 新建字典的键
 # bad_key = [1,2]  # 不能作为字典键（会报 TypeError）
 
 # 遍历字典
-for k, v in d.items():
+for k, v in d.items():  # k为元素值，v为对应索引值
     print(k, v)
 
 # 字典推导式（快速创建）
